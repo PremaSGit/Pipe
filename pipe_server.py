@@ -5,8 +5,11 @@ import json
 import random
 from datetime import datetime
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # <-- NEW: Import CORS
 
 app = Flask(__name__)
+CORS(app)  # <-- NEW: Enable CORS for all domains
+
 
 # --- CONFIGURATION ---
 DATA_SOURCE_URL = "https://jsonplaceholder.typicode.com/posts"
